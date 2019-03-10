@@ -1,0 +1,18 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: content-box;
+  min-width: $mobile-min-width;
+  height: 100%;
+
+  overflow-x: hidden;
+
+  font-family: "Trebuchet MS", "Arial", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: $color-grey;
+}

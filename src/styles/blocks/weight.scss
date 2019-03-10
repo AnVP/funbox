@@ -1,0 +1,27 @@
+.weight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 80px;
+  height: 80px;
+
+  background-color: $color-default;
+  border-radius: 50%;
+}
+
+.weight__description {
+  line-height: 22px;
+  color: $color-white;
+
+  &--number {
+    margin-top: 18px;
+    margin-bottom: 10px;
+
+    font-size: 42px;
+  }
+
+  &--type {
+    font-size: 21px;
+  }
+}

@@ -1,0 +1,12 @@
+.main-page {
+  position: relative;
+
+  display: block;
+
+  background-color: $color-black;
+  background-image: url("../img/background@1x.jpg");
+
+  @include desktop {
+    height: 100vh;
+  }
+}

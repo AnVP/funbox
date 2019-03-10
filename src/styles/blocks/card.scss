@@ -1,0 +1,225 @@
+.card {
+  width: $mobile-min-width;
+}
+
+.card--default {
+  & .card__top-text--selected-hover,
+  & .card__description--selected,
+  & .card__description--disabled {
+    display: none;
+  }
+}
+
+.card--default-hover {
+  & .card__wrapper {
+    border-color: $color-default-hover;
+
+    &::before {
+      border-color: $color-default-hover;
+    }
+
+    &::after {
+      border-color: $color-default-hover;
+    }
+  }
+
+  & .card__weight {
+    background-color:$color-default-hover;
+  }
+
+  & .card__description--link {
+    color: $color-default-hover;
+  }
+}
+
+.card--selected {
+  & .card__top-text--selected-hover,
+  & .card__description--default,
+  & .card__description--disabled {
+    display: none;
+  }
+
+  & .card__wrapper {
+    border-color: $color-selected;
+
+    &::before {
+      border-color: $color-selected;
+    }
+
+    &::after {
+      border-color: $color-selected;
+    }
+  }
+
+  & .card__weight {
+    background-color:$color-selected;
+  }
+}
+
+.card--selected-hover {
+  & .card__top-text--default {
+    display: none;
+  }
+
+  & .card__top-text--selected-hover {
+    display: block;
+  }
+
+  & .card__wrapper {
+    border-color: $color-selected-hover;
+
+    &::before {
+      border-color: $color-selected-hover;
+    }
+
+    &::after {
+      border-color: $color-selected-hover;
+    }
+  }
+
+  & .card__weight {
+    background-color:$color-selected-hover;
+  }
+}
+
+.card--disabled {
+  & .card__top-text--selected-hover,
+  & .card__description--selected,
+  & .card__description--default {
+    display: none;
+  }
+
+  & .card__wrapper {
+    background-image:
+    linear-gradient(to top, rgba(242,242,242,0.5), rgba(242,242,242,0.5)),
+    url("../img/cat@1x.png");
+
+    cursor: text;
+  }
+
+  & .card__wrapper {
+    border-color: $color-disabled;
+
+    &::before {
+      border-color: $color-disabled;
+    }
+
+    &::after {
+      border-color: $color-disabled;
+    }
+  }
+
+  & .card__weight {
+    background-color:$color-disabled;
+  }
+
+  & .card__top-text,
+  & .card__title,
+  & .card__feature-list {
+    color: $color-disabled;
+  }
+}
+
+.card__wrapper {
+  position: relative;
+
+  height: 436px;
+  padding-left: 44px;
+  margin-top: 46px;
+
+  background-color: $color-background;
+  background-image: url("../img/cat@1x.png");
+  background-repeat: no-repeat;
+  background-position: -30px 178px;
+  background-size: 350px auto;
+
+  border: 4px solid $color-default;
+  border-top: none;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -25px;
+    left: 1px;
+    z-index: 1;
+
+    width: 56px;
+    height: 30px;
+
+    background-color: $color-background;
+    border-top: 4px solid $color-default;
+
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -4px;
+    z-index: 2;
+
+    width: 274px;
+    height: 38px;
+
+    background-color: $color-background;
+    border-top: 4px solid $color-default;
+    border-right: 4px solid $color-default;
+    border-top-right-radius: 8px;
+  }
+}
+
+.card__top-text {
+  position: absolute;
+  top: -38px;
+  left: 44px;
+  z-index: 3;
+
+  font-size: 16px;
+
+  &--selected-hover {
+    color: $color-selected-hover;
+  }
+}
+
+.card__title {
+  margin: 0;
+
+  font-size: 48px;
+  font-weight: 700;
+  color: $color-black;
+
+  &--description {
+    font-size: 24px;
+  }
+}
+
+.card__feature-list {
+  margin-top: 16px;
+}
+
+.card__weight {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+}
+
+.card__description {
+  font-size: 13px;
+  text-align: center;
+  color: $color-white;
+
+  &--link {
+    color: $color-default;
+    text-decoration: underline;
+    text-decoration-style: dashed;
+  }
+
+  &--disabled {
+    color: $color-yellow;
+  }
+}
